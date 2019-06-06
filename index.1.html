@@ -15,6 +15,23 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/css/mdb.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/stylemd.css">
 
+<script>
+function take_screenshot()
+{
+ html2canvas(document.body, {  
+  onrendered: function(canvas)  
+  {
+    var img = canvas.toDataURL()
+    $.post("save_screenshot.php", {data: img}, function (file){
+	window.location.href =  "save_screenshot.php?file="+ file
+    });
+  }
+ });
+}
+</script>
+
+
+
 </head>
     <!--Main Navigation-->
     <header>
@@ -128,6 +145,7 @@
                     <div class="col-md-8">
 
                         <!-- Description -->
+                        
                         <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi voluptate
                             hic
                             provident nulla repellat
