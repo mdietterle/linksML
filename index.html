@@ -6,286 +6,571 @@
   <title>Links do Prof. Martim</title>
 
   <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<!-- Font Awesome -->
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"> -->
+<script src="https://kit.fontawesome.com/c536edbee8.js"></script>
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/css/mdb.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/stylemd.css">
+
+<script>
+function take_screenshot()
+{
+ html2canvas(document.body, {  
+  onrendered: function(canvas)  
+  {
+    var img = canvas.toDataURL()
+    $.post("save_screenshot.php", {data: img}, function (file){
+	window.location.href =  "save_screenshot.php?file="+ file
+    });
+  }
+ });
+}
+</script>
+
+
 
 </head>
-<body>
-  <!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">three</a></li>
-  </ul>
-  <div class="navbar-fixed">
-<nav class="blue darken-2 lighten-1" role="navigation">
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo">Logo</a>
-    <a href="#" data-activates="menu-mobile" class="button-collapse"><i class="material-icons">menu</i>
-    </a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="#">Um</a></li>
-      <li><a href="#">Dois</a></li>
-      <li><a href="#">Tres</a></li>
-      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-    </ul>
-    <ul class="side-nav" id="menu-mobile">
-        <li><a href="#">Um</a></li>
-        <li><a href="#">Dois</a></li>
-        <li><a href="#">Tres</a></li>
-        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-      </ul>
-  </div>
-</nav>
-</div>
-  <div class="section no-pad-bot" id="index-banner">
+    <!--Main Navigation-->
+    <header>
+
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+
+            <div class="container">
+
+                <!-- Navbar brand -->
+                <a class="navbar-brand" href="#">Navbar</a>
+
+                <!-- Collapse button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="basicExampleNav">
+
+                    <!-- Links -->
+                    <ul class="navbar-nav mr-auto smooth-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#intro">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#best-features">Dicas Iniciais</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sites">Sites</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#gallery">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <!-- Links -->
+
+                    <!-- Social Icon  -->
+                    <ul class="navbar-nav nav-flex-icons">
+                        <li class="nav-item">
+                            <a class="nav-link"><i class="fab fa-facebook"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"><i class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Collapsible content -->
+
+            </div>
+
+        </nav>
+        <!--/.Navbar-->
+
+        <!--Mask-->
+        <div id="intro" class="view">
+
+            <div class="mask rgba-black-strong">
+
+                <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+
+                    <div class="row d-flex justify-content-center text-center">
+
+                        <div class="col-md-10">
+
+                            <!-- Heading -->
+                            <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">Links escolhidos</h2>
+
+                            <!-- Divider -->
+                            <hr class="hr-light">
+
+                            <!-- Description -->
+                            <h4 class="white-text my-4">Uma pequena seleção de links encontrados na Web.</h4>
+                            <button type="button" class="btn btn-outline-white">Leia Mais<i class="fas fa-book ml-2"></i></button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!--/.Mask-->
+
+    </header>
+    <!--Main Navigation-->
+
+    <!--Main layout-->
+    <main class="mt-5">
+        <div class="container">
+
+            <!--Section: Best Features-->
+            <section id="best-features" class="text-center">
+
+                <!-- Heading -->
+                <h2 class="mb-5 font-weight-bold">Best Features</h2>
+
+                <!--Grid row-->
+                <div class="row d-flex justify-content-center mb-4">
+
+                    <!--Grid column-->
+                    <div class="col-md-8">
+
+                        <!-- Description -->
+                        
+                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi voluptate
+                            hic
+                            provident nulla repellat
+                            facere esse molestiae ipsa labore porro minima quam quaerat rem, natus repudiandae debitis
+                            est
+                            sit pariatur.</p>
+
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-4 mb-5">
+                        <i class="fa fa-camera-retro fa-4x orange-text"></i>
+                        <h4 class="my-4 font-weight-bold">Experience</h4>
+                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+                            maiores nam,
+                            aperiam minima
+                            assumenda deleniti hic.</p>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-4 mb-1">
+                        <i class="fa fa-heart fa-4x orange-text"></i>
+                        <h4 class="my-4 font-weight-bold">Happiness</h4>
+                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+                            maiores nam,
+                            aperiam minima
+                            assumenda deleniti hic.</p>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-4 mb-1">
+                        <i class="fa fa-bicycle fa-4x orange-text"></i>
+                        <h4 class="my-4 font-weight-bold">Adventure</h4>
+                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
+                            maiores nam,
+                            aperiam minima
+                            assumenda deleniti hic.</p>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+            </section>
+            <!--Section: Best Features-->
+
+            <hr class="my-5">
+
+            
+<!--Section: articles-->
+<section id="articles" class="text-center py-5">
+
+    <!-- Container -->
     <div class="container">
-      <br><br>
-      <h1 class="header center blue-text">Lista de Links interessantes, categorizados</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">Uma lista de links, categorizados sobre Machine Learning, IA, Deep Learning e outros assuntos relacionados</h5>
-      </div>
-      <div class="row center">
-        <a href="index.html#MachineLearning" id="download-button" class="btn-large waves-effect waves-light blue">MachineLearning</a>
-        <a href="index.html#Datasets" id="download-button" class="btn-large waves-effect waves-light blue">Datasets</a>
-        <a href="index.html#Modelos" id="download-button" class="btn-large waves-effect waves-light blue">Modelos</a>
-      </div>
-      <br><br>
+
+        <!-- Section heading -->
+        <a name='sites'></a>
+        <h2 class="h1-responsive font-weight-bold mb-5">Sites escolhidos sobre o assunto</h2>
+
+        <!--Grid row-->
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-4">
+
+                <!-- Card Narrower -->
+                <div class="card card-cascade narrower">
+
+                    <!-- Card image -->
+                    <div class="view view-cascade overlay">
+                        <img class="card-img-top" src="img/site.jpg"
+                            alt="Imagem identificando site">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <!-- Card content -->
+                    <div class="card-body card-body-cascade">
+
+                        <!-- Label -->
+                        <h5 class="pink-text pb-2 pt-1"><i class="fas fa-globe-americas"></i> site</h5>
+                        <!-- Title -->
+                        <h4 class="font-weight-bold card-title">Cheat day inspirations</h4>
+                        <!-- Text -->
+                        <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam
+                            corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
+                        <!-- Button -->
+                        <a class="btn btn-unique">Button</a>
+
+                    </div>
+
+                </div>
+                <!-- Card Narrower -->
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <!-- Card Narrower -->
+                <div class="card card-cascade narrower">
+
+                    <!-- Card image -->
+                    <div class="view view-cascade overlay">
+                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg"
+                            alt="Card image cap">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <!-- Card content -->
+                    <div class="card-body card-body-cascade">
+
+                        <!-- Label -->
+                        <h5 class="pink-text pb-2 pt-1"><i class="fas fa-utensils"></i> Culinary</h5>
+                        <!-- Title -->
+                        <h4 class="font-weight-bold card-title">Cheat day inspirations</h4>
+                        <!-- Text -->
+                        <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam
+                            corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
+                        <!-- Button -->
+                        <a class="btn btn-unique">Button</a>
+
+                    </div>
+
+                </div>
+                <!-- Card Narrower -->
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <!-- Card Narrower -->
+                <div class="card card-cascade narrower">
+
+                    <!-- Card image -->
+                    <div class="view view-cascade overlay">
+                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg"
+                            alt="Card image cap">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <!-- Card content -->
+                    <div class="card-body card-body-cascade">
+
+                        <!-- Label -->
+                        <h5 class="pink-text pb-2 pt-1"><i class="fas fa-utensils"></i> Culinary</h5>
+                        <!-- Title -->
+                        <h4 class="font-weight-bold card-title">Cheat day inspirations</h4>
+                        <!-- Text -->
+                        <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam
+                            corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
+                        <!-- Button -->
+                        <a class="btn btn-unique">Button</a>
+
+                    </div>
+
+                </div>
+                <!-- Card Narrower -->
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
 
     </div>
-  </div>
+    <!-- Container -->
+
+</section>
+<!--Section: articles-->
+
+            
+
+            <hr class="my-5">
 
 
-  <div class="container">
-    <div class="section">
 
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text">
-                <i class="material-icons">settings</i></h2>
-            <a name="MachineLearning"></a><a href="https://www.coursera.org/learn/machine-learning"><h5 class="center">Aprendizagem automática (Stanford)</h5></a>
-            <p class="lignt">Curso de machine Learning da Uuniversidade de Stanford, totalmente online.<br>
-              <em>"This course provides a broad introduction to machine learning, datamining, and statistical pattern recognition."</em></p>
-              <h5>Tags:</h5>
-                <span class="new badge blue" data-badge-caption="Curso"></span><span class="new badge blue" data-badge-caption="Online"></span>
-                <span class="new badge blue" data-badge-caption="Stanford"></span><span class="new badge blue" data-badge-caption="ML"></span>
-          </div>
-        </div>
+            <hr class="my-5">
 
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text">   
-              <i class="material-icons">settings</i></h2>
-          <a href="https://cursos.mundosenai.com.br/"><h5 class="center">Cursos MundoSenai</h5></a>
-          <p class="lignt">Cursos gratuitos de Machine Learning, IA, Python, entre outros.<br>
-            Alguns cursos já estão legendados em PT-BR.<br>
-            <em>"Disponível para toda a comunidade, basta criar uma conta com um endereço de email válido."</em></p><br>
-            <h5>Tags:</h5>
-              <span class="new badge blue" data-badge-caption="Curso"></span><span class="new badge blue" data-badge-caption="Online"></span>
-              <span class="new badge blue" data-badge-caption="SENAI"></span><span class="new badge blue" data-badge-caption="ML"></span>
-          </div>
-        </div>
+            <!--Section: Contact-->
+            <section id="contact">
 
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text">
-              <i class="material-icons">settings</i></h2>
-          <a href="https://www.microsoft.com/pt-br/academia"><h5 class="center">Microsoft AcademIA</h5></a>
-          <p class="lignt">Cursos disponibilizados pela Microsoft, a maioria em inglês, com legendas em Inglês.<br>
-            Disponibiliza mais cursos do que o Mundo Senai, em mais áreas também.<br>
-            <em>"Você pode solicitar certificado emitido pela MS, porém precisa responder todos questionários/provas e pagar a taxa de emissão."</em>"</p>
-            <h5>Tags:</h5>
-              <span class="new badge blue" data-badge-caption="Curso"></span><span class="new badge blue" data-badge-caption="Online"></span>
-              <span class="new badge blue" data-badge-caption="Microsoft"></span><span class="new badge blue" data-badge-caption="ML"></span>
-          </div>
-        </div>
-      </div>
+                <!-- Heading -->
+                <h2 class="mb-5 font-weight-bold text-center">Contact us</h2>
 
-      <!-- Segunda Linha-->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text">
-                <i class="material-icons">settings</i></h2>
-            <a href="https://developers.google.com/machine-learning/crash-course/ml-intro"><h5 class="center">Google - Introduction to Machine Learning</h5></a>
-            <p class="lignt">Treinamento Google Machine Learning, em Inglês. Possui legendas em vários idiomas.<br>
-              <em>"Learn and apply fundamental machine learning concepts with the Crash Course, get real-world experience with the companion Kaggle competition, or visit Learn with Google AI to explore the full library of training resources."</em></p>
-              <h5>Tags:</h5>
-                <span class="new badge blue" data-badge-caption="Curso"></span><span class="new badge blue" data-badge-caption="Online"></span>
-                <span class="new badge blue" data-badge-caption="Google"></span><span class="new badge blue" data-badge-caption="ML"></span>
-          </div>
-        </div>
+                <!--Grid row-->
+                <div class="row">
 
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text">
-              <i class="material-icons">settings</i></h2>
-          <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-867-machine-learning-fall-2006/index.htm"><h5 class="center">MIT - Machine Learning</h5></a>
-          <p class="lignt">Curso de machine Learning do MIT. Bastante material de apoio. Em inglês.<br>
-            <em>"This course is an introductory course on machine learning which gives an overview of many concepts, techniques, and algorithms in machine learning, beginning with topics such as classification and linear regression and ending up with more recent topics such as boosting, support vector machines, hidden Markov models, and Bayesian networks. The course will give the student the basic ideas and intuition behind modern machine learning methods as well as a bit more formal understanding of how, why, and when they work. The underlying theme in the course is statistical inference as it provides the foundation for most of the methods covered."</em></p>
-            <h5>Tags:</h5>
-              <span class="new badge blue" data-badge-caption="Curso"></span><span class="new badge blue" data-badge-caption="Online"></span>
-              <span class="new badge blue" data-badge-caption="MIT"></span><span class="new badge blue" data-badge-caption="ML"></span>
-          </div>
-        </div>
+                    <!--Grid column-->
+                    <div class="col-lg-5 col-md-12">
+                        <!-- Form contact -->
+                        <form class="p-5 grey-text">
+                            <div class="md-form form-sm"> <i class="fa fa-user prefix"></i>
+                                <input type="text" id="form3" class="form-control form-control-sm">
+                                <label for="form3">Your name</label>
+                            </div>
+                            <div class="md-form form-sm"> <i class="fa fa-envelope prefix"></i>
+                                <input type="text" id="form2" class="form-control form-control-sm">
+                                <label for="form2">Your email</label>
+                            </div>
+                            <div class="md-form form-sm"> <i class="fa fa-tag prefix"></i>
+                                <input type="text" id="form32" class="form-control form-control-sm">
+                                <label for="form34">Subject</label>
+                            </div>
+                            <div class="md-form form-sm"> <i class="fa fa-pencil prefix"></i>
+                                <textarea type="text" id="form8" class="md-textarea form-control form-control-sm" rows="4"></textarea>
+                                <label for="form8">Your message</label>
+                            </div>
+                            <div class="text-center mt-4">
+                                <button class="btn btn-primary">Send <i class="fa fa-paper-plane-o ml-1"></i></button>
+                            </div>
+                        </form>
+                        <!-- Form contact -->
+                    </div>
+                    <!--Grid column-->
 
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text">
-              <i class="material-icons">settings</i></h2>
-          <a href="https://www.aws.training/LearningLibrary?filters=classification%3A30&search=&tab=view_all"><h5 class="center">AWS - Training & Certification</h5></a>
-          <p class="lignt">Material de treinamento para certificação AWS.<br>
-            <em>"Oferece mais de 30 cursos digitais de ML, totalizando mais de 45 horas, além de laboratórios práticos e documentação, desenvolvidos originalmente para uso interno da Amazon."</em></p>
-            <h5>Tags:</h5>
-              <span class="new badge blue" data-badge-caption="Curso"></span><span class="new badge blue" data-badge-caption="Online"></span>
-              <span class="new badge blue" data-badge-caption="AWS"></span><span class="new badge blue" data-badge-caption="ML"></span>
-          </div>
-        </div>
-      </div>
-      <!-- Datasets-->
-      <!-- Primeira Linha-->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text">
-                <i class="material-icons">cloud_download</i></h2>
-            <a name="Datasets"></a><a href="https://brasil.io/home"><h5 class="center">Brasil.io</h5></a>
-            <p class="lignt">O Brasil em dados libertos.<br>
-              <em>"Repositório de dados públicos disponibilizados em formato acessível."</em></p>
-              <h5>Tags:</h5>
-                <span class="new badge blue" data-badge-caption="Dados"></span><span class="new badge blue" data-badge-caption="Datasets"></span>
-                <span class="new badge blue" data-badge-caption="Público"></span><span class="new badge blue" data-badge-caption="Brasil"></span>
-          </div>
-        </div>
+                    <!--Grid column-->
+                    <div class="col-lg-7 col-md-12">
 
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text">
-              <i class="material-icons">cloud_download</i></h2>
-          <a href="https://www.kaggle.com/"><h5 class="center">Kaggle</h5></a>
-          <p class="lignt">Repositório de dados dos mais variados tipos e formatos. Em Inglês. Necessita registro.<br>
-            <em>"Kaggle is the place to do data science projects."</em></p>
-            <h5>Tags:</h5>
-              <span class="new badge blue" data-badge-caption="Dados"></span><span class="new badge blue" data-badge-caption="Datasets"></span>
-              <span class="new badge blue" data-badge-caption="Learn"></span><span class="new badge blue" data-badge-caption="Mundo"></span>
-          </div>
-        </div>
+                        <!--Grid row-->
+                        <div class="row text-center">
 
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text">
-              <i class="material-icons">cloud_download</i></h2>
-          <a href="https://github.com/awesomedata/awesome-public-datasets"><h5 class="center">Awesome Public Datasets</h5></a>
-          <p class="lignt">Repositório GitHub contendo listas de locais para download de Datasets.<br>
-            <em>"This list of a topic-centric public data sources in high quality. They are collected and tidied from blogs, answers, and user responses. Most of the data sets listed below are free, however, some are not. Other amazingly awesome lists can be found in sindresorhus's awesome list."</em></p>
-            <h5>Tags:</h5>
-              <span class="new badge blue" data-badge-caption="Lista"></span><span class="new badge blue" data-badge-caption="Datasets"></span>
-              <span class="new badge blue" data-badge-caption="Baixar"></span><span class="new badge blue" data-badge-caption="Github"></span>
-          </div>
-        </div>
-      </div>
+                            <!--Grid column-->
+                            <div class="col-lg-4 col-md-12 mb-3">
 
-      <!-- Modelos -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text">
-                <i class="material-icons">cloud_download</i></h2>
-            <a name="Modelos"></a><a href="https://www.datageeks.com.br/regressao-linear/"><h5 class="center">Regressão Linear: entenda como utilizar</h5></a>
-            <p class="lignt">Post sobre Regressão Linear do DataGeeks.<br>
-              <em>"Conceitos básicos sobre Regressão Linear, um dos algoritmos de Machine Learning usado para efetuar previsões baseado em um conjunto de informações já conhecido."</em></p>
-              <h5>Tags:</h5>
-                <span class="new badge blue" data-badge-caption="Regressão"></span><span class="new badge blue" data-badge-caption="Algoritmo"></span>
-                <span class="new badge blue" data-badge-caption="Blog"></span><span class="new badge blue" data-badge-caption="PT-BR"></span>
-          </div>
-        </div>
+                                <p><i class="fa fa-map fa-1x mr-2 grey-text"></i>New York, NY 10012</p>
 
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text">
-              <i class="material-icons">cloud_download</i></h2>
-          <a href="https://realpython.com/linear-regression-in-python/"><h5 class="center">Linear Regression in Python</h5></a>
-          <p class="lignt">Conceitos de regressão linear utilizando Python.<br>
-            <em>"Data science and machine learning are driving image recognition, autonomous vehicles development, decisions in the financial and energy sectors, advances in medicine, the rise of social networks, and more. Linear regression is an important part of this."</em></p>
-            <h5>Tags:</h5>
-              <span class="new badge blue" data-badge-caption="Regressão"></span><span class="new badge blue" data-badge-caption="Python"></span>
-              <span class="new badge blue" data-badge-caption="Artigo"></span><span class="new badge blue" data-badge-caption="Inglês"></span>
-          </div>
-        </div>
+                            </div>
+                            <!--Grid column-->
 
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text">
-              <i class="material-icons">cloud_download</i></h2>
-          <a href="https://towardsdatascience.com/simple-and-multiple-linear-regression-in-python-c928425168f9"><h5 class="center">Simple and Multiple Linear Regression in Python</h5></a>
-          <p class="lignt">Regressão Linear em Python.<br>
-            <em>"In this blog post, I want to focus on the concept of linear regression and mainly on the implementation of it in Python."</em></p>
-            <h5>Tags:</h5>
-              <span class="new badge blue" data-badge-caption="Regressão"></span><span class="new badge blue" data-badge-caption="Python"></span>
-              <span class="new badge blue" data-badge-caption="Artigo"></span><span class="new badge blue" data-badge-caption="Inglês"></span>
-          </div>
-        </div>
-      </div>
+                            <!--Grid column-->
+                            <div class="col-lg-4 col-md-6 mb-3">
 
-      <!-- Linhas antes daqui-->
-    </div>
-    <br><br>
-  </div>
+                                <p><i class="fa fa-building fa-1x mr-2 grey-text"></i>Mon - Fri, 8:00-22:00</p>
 
-  <footer class="page-footer orange">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+                            </div>
+                            <!--Grid column-->
 
+                            <!--Grid column-->
+                            <div class="col-lg-4 col-md-6 mb-3">
+
+                                <p><i class="fa fa-phone fa-1x mr-2 grey-text"></i>+ 01 234 567 89</p>
+
+                            </div>
+                            <!--Grid column-->
+
+                        </div>
+                        <!--Grid row-->
+
+                        <!--Google map-->
+                        <!-- <div id="map-container" class="z-depth-1-half map-container mb-5" style="height: 400px"></div> -->
+
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+            </section>
+            <!--Section: Contact-->
 
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
+    </main>
+    <!--Main layout-->
+
+    <!-- Footer -->
+    <footer class="page-footer font-small unique-color-dark">
+
+        <!-- Social buttons -->
+        <div class="primary-color">
+            <div class="container">
+                <!--Grid row-->
+                <div class="row py-4 d-flex align-items-center">
+
+                    <!--Grid column-->
+                    <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                        <h6 class="mb-0 white-text">Get connected with us on social networks!</h6>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6 col-lg-7 text-center text-md-right">
+                        <!--Facebook-->
+                        <a class="fb-ic ml-0">
+                            <i class="fab fa-facebook white-text mr-4"> </i>
+                        </a>
+                        <!--Twitter-->
+                        <a class="tw-ic">
+                            <i class="fab fa-twitter white-text mr-4"> </i>
+                        </a>
+                        <!--Google +-->
+                        <a class="gplus-ic">
+                            <i class="fab fa-google-plus white-text mr-4"> </i>
+                        </a>
+                        <!--Linkedin-->
+                        <a class="li-ic">
+                            <i class="fab fa-linkedin white-text mr-4"> </i>
+                        </a>
+                        <!--Instagram-->
+                        <a class="ins-ic">
+                            <i class="fab fa-instagram white-text mr-lg-4"> </i>
+                        </a>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+            </div>
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
+        <!-- Social buttons -->
+
+        <!--Footer Links-->
+        <div class="container mt-5 mb-4 text-center text-md-left">
+            <div class="row mt-3">
+
+                <!--First column-->
+                <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>Company name</strong>
+                    </h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit
+                        amet, consectetur adipisicing elit.</p>
+                </div>
+                <!--/.First column-->
+
+                <!--Second column-->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>Products</strong>
+                    </h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a href="#!">MDBootstrap</a>
+                    </p>
+                    <p>
+                        <a href="#!">MDWordPress</a>
+                    </p>
+                    <p>
+                        <a href="#!">BrandFlow</a>
+                    </p>
+                    <p>
+                        <a href="#!">Bootstrap Angular</a>
+                    </p>
+                </div>
+                <!--/.Second column-->
+
+                <!--Third column-->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>Useful links</strong>
+                    </h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a href="#!">Your Account</a>
+                    </p>
+                    <p>
+                        <a href="#!">Become an Affiliate</a>
+                    </p>
+                    <p>
+                        <a href="#!">Shipping Rates</a>
+                    </p>
+                    <p>
+                        <a href="#!">Help</a>
+                    </p>
+                </div>
+                <!--/.Third column-->
+
+                <!--Fourth column-->
+                <div class="col-md-4 col-lg-3 col-xl-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>Contact</strong>
+                    </h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
+                    <p>
+                        <i class="fa fa-envelope mr-3"></i> info@example.com</p>
+                    <p>
+                        <i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
+                    <p>
+                        <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
+                </div>
+                <!--/.Fourth column-->
+
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
-    </div>
-  </footer>
+        <!--/.Footer Links-->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+            <a href="https://mdbootstrap.com/bootstrap-tutorial/"> MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
 
 
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-  <script>
-      $(function(){
-          $(".button-collapse").sideNav();
-      });
-      </script>
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/js/mdb.min.js"></script>
 
   </body>
 </html>
